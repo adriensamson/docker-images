@@ -1,0 +1,2 @@
+startup=1
+POUND_ARGS="-f /srv/pound.cfg"
