@@ -2,16 +2,38 @@
 
 cd $(dirname $0)
 
-build () {
-    docker build -t adriensamson/$1 $1
-}
+OPTIONS=
+IMAGES=
 
-if [ -n "$1" ]
+while [ $# -gt 0 ]
+do
+    case $1 in
+        --no-cache)
+            OPTIONS="$OPTIONS --no-cache"
+            shift 1
+        ;;
+        *)
+            if [ -d "$1" ]
+            then
+                IMAGES="$IMAGES $1"
+                shift 1
+            else
+                echo Unknown image $1 >&2
+                exit 1
+            fi
+        ;;
+    esac
+done
+
+if [ -z "$IMAGES" ]
 then
-    build $1
-else
     for dir in $(find . -mindepth 1 -maxdepth 1 -type d -name '[^.]*')
     do
-        build $(basename $dir)
+        IMAGES="$IMAGES $(basename $dir)"
     done
 fi
+
+for image in $IMAGES
+do
+    echo docker build $OPTIONS -t adriensamson/$image $image
+done
