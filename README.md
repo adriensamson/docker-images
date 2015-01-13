@@ -37,7 +37,7 @@ docker run -it -v /path/src:/srv adriensamson/composer composer install
 docker run -it -v /path/src:/srv adriensamson/composer php -S 0.0.0.0:8080
 ```
 
-* grunt (based on debian jessie)
+### grunt (based on debian jessie)
 
 ```
 docker run -it -v /path/src:/srv adriensamson/grunt npm install
