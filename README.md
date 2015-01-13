@@ -5,6 +5,7 @@ This is my collection of docker images based on debian wheezy (stable).
 Daemon images:
 
 * mysql
+* mongo
 * nginx
 * pound
 
