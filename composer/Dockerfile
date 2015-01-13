@@ -9,5 +9,6 @@ RUN apt-get install -y curl php5-cli
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-WORKDIR /var/www
+VOLUME /srv
+WORKDIR /srv
 CMD composer

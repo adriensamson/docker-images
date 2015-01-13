@@ -33,8 +33,8 @@ docker run -itd -v /path/conf/pound.cfg:/srv/pound.cfg adriensamson/pound
 ### composer
 
 ```
-docker run -it -v /path/src:/var/www adriensamson/composer composer install
-docker run -it -v /path/src:/var/www adriensamson/composer php -S 0.0.0.0:8080
+docker run -it -v /path/src:/srv adriensamson/composer composer install
+docker run -it -v /path/src:/srv adriensamson/composer php -S 0.0.0.0:8080
 ```
 
 * grunt (based on debian jessie)
