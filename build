@@ -35,5 +35,5 @@ fi
 
 for image in $IMAGES
 do
-    echo docker build $OPTIONS -t adriensamson/$image $image
+    docker build $OPTIONS -t adriensamson/$image $image
 done

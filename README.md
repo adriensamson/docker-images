@@ -22,6 +22,12 @@ docker run -itd -v /path/data/mongodb:/var/lib/mongodb adriensamson/mysql
 docker run -itd -v /path/conf/nginx:/etc/nginx/sites-enabled adriensamson/nginx
 ```
 
+### nginx + php-fpm
+
+```
+docker run -itd -v /path:/srv adriensamson/nginx-php-fpm
+```
+
 ### pound
 
 ```
