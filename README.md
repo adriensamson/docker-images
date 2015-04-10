@@ -34,6 +34,12 @@ docker run -itd -v /path:/srv adriensamson/nginx-php-fpm
 docker run -itd -v /path/conf/pound.cfg:/srv/pound.cfg adriensamson/pound
 ```
 
+### github-pages
+
+```
+docker run -it -v /path:/srv adriensamson/github-pages
+```
+
 ## CLI images
 
 ### composer
