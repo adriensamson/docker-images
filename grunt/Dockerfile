@@ -2,9 +2,7 @@ FROM stackbrew/debian:jessie
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update
-
-RUN apt-get install -y nodejs nodejs-legacy npm git
+RUN apt-get update && apt-get install -y nodejs nodejs-legacy npm git
 
 RUN npm install -g grunt-cli bower
 

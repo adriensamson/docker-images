@@ -2,12 +2,11 @@ FROM stackbrew/debian:wheezy
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update
-RUN apt-get install -y mysql-server
+RUN apt-get update && apt-get install -y mysql-server
 
 RUN sed -i "s/^bind-address.*/bind-address=0.0.0.0/" /etc/mysql/my.cnf
 
-ADD setup.sh /srv/
+COPY setup.sh /srv/
 
 VOLUME /var/lib/mysql
 
