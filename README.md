@@ -1,6 +1,8 @@
 # docker-images
 
-This is my collection of docker images based on debian wheezy (stable).
+This is my collection of docker images based on debian wheezy (stable) when possible.
+
+These images are not in the docker hub repository but you can build them easily with the `build` script.
 
 ## Daemon images
 
@@ -26,6 +28,12 @@ docker run -itd -v /path/conf/nginx:/etc/nginx/sites-enabled adriensamson/nginx
 
 ```
 docker run -itd -v /path:/srv adriensamson/nginx-php-fpm
+```
+
+### nginx for Symfony
+
+```
+docker run -itd -v /path:/srv adriensamson/nginx-symfony
 ```
 
 ### pound
