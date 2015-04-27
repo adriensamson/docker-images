@@ -30,6 +30,12 @@ docker run -itd -v /path/conf/nginx:/etc/nginx/sites-enabled adriensamson/nginx
 docker run -itd -v /path:/srv adriensamson/nginx-php-fpm
 ```
 
+### nginx + hhvm
+
+```
+docker run -itd -v /path:/srv adriensamson/nginx-hhvm
+```
+
 ### nginx for Symfony
 
 ```
@@ -50,11 +56,17 @@ docker run -it -v /path:/srv adriensamson/github-pages
 
 ## CLI images
 
-### composer
+### php-composer
 
 ```
-docker run -it -v /path/src:/srv adriensamson/composer composer install
-docker run -it -v /path/src:/srv adriensamson/composer php -S 0.0.0.0:8080
+docker run -it -v /path/src:/srv adriensamson/php-composer composer install
+docker run -it -v /path/src:/srv adriensamson/php-composer php -S 0.0.0.0:8080
+```
+
+### hhvm-composer
+
+```
+docker run -it -v /path/src:/srv adriensamson/hhvm-composer composer install
 ```
 
 ### grunt (based on debian jessie)
