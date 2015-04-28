@@ -7,6 +7,7 @@ RUN echo deb http://dl.hhvm.com/debian jessie main >/etc/apt/sources.list.d/hhvm
 RUN apt-get update && apt-get install -y nginx hhvm supervisor
 
 RUN sed -i 's@hhvm.server.port.*@hhvm.server.file_socket = /var/run/hhvm/fastcgi.sock@' /etc/hhvm/server.ini
+RUN >>/etc/hhvm/server.ini echo 'hhvm.server.implicit_flush = 1'
 
 COPY default /etc/nginx/sites-enabled/default
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
