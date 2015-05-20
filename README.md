@@ -9,6 +9,9 @@ These images are not in the docker hub repository but you can build them easily 
 ### mysql
 
 ```
+# setup (give root access without password)
+docker run -it --rm -v /path/data/mysql:/var/lib/mysql adriensamson/mysql /srv/setup.sh
+# run
 docker run -itd -v /path/data/mysql:/var/lib/mysql adriensamson/mysql
 ```
 

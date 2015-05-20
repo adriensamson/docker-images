@@ -1,4 +1,4 @@
-FROM stackbrew/debian:wheezy
+FROM stackbrew/debian:jessie
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -9,7 +9,5 @@ RUN sed -i "s/^bind-address.*/bind-address=0.0.0.0/" /etc/mysql/my.cnf
 COPY setup.sh /srv/
 
 VOLUME /var/lib/mysql
-
 EXPOSE 3306
-CMD /srv/setup.sh && /etc/init.d/mysql start && /bin/bash
-
+CMD mysqld_safe
